@@ -1,0 +1,12 @@
+Name: GBENGA-IDOWU ARAOLUWA
+
+Matric Number: 22CD032145
+
+Machine Learning Algorithm Used: Random Forest Regressor
+
+Model Persistence Method Used: Joblib
+
+Live URL of Hosted Application: https://breastcancer-project-gbengaidowu.onrender.com
+
+
+GitHub Repository Link: https://github.com/AraoluwaGI/BreastCancer_Project_GbengaIdowu_22CD032145
