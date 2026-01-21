@@ -1,0 +1,396 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.95;
+}
+
+/* Card */
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Warning Banner */
+.warning-banner {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
+    border-left: 4px solid #ff9800;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.warning-banner strong {
+    color: #ff6f00;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.warning-banner p {
+    margin: 0;
+    color: #856404;
+    line-height: 1.6;
+}
+
+/* Form Styles */
+form h2 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* Tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+    background: #667eea;
+    color: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: bold;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 220px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -110px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: normal;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Button */
+.btn-predict {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-predict:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-predict:active {
+    transform: translateY(0);
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Result Section */
+.result {
+    margin-top: 30px;
+    padding: 30px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 10px;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-header h2 {
+    color: #667eea;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Prediction Outcome */
+.prediction-outcome {
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.prediction-outcome.benign {
+    background: linear-gradient(135deg, #a8e6cf 0%, #56ab2f 100%);
+    border: 3px solid #2d7a1f;
+}
+
+.prediction-outcome.malignant {
+    background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
+    border: 3px solid #922020;
+}
+
+.outcome-icon {
+    font-size: 4em;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.outcome-text {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Probability Section */
+.probability-section {
+    margin-bottom: 25px;
+}
+
+.probability-section h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.probability-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.prob-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.prob-label {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: #555;
+}
+
+.prob-value {
+    color: #667eea;
+}
+
+.prob-bar {
+    height: 25px;
+    background: #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.prob-fill {
+    height: 100%;
+    transition: width 0.5s ease-out;
+    border-radius: 12px;
+}
+
+.prob-fill.benign {
+    background: linear-gradient(90deg, #56ab2f 0%, #a8e6cf 100%);
+}
+
+.prob-fill.malignant {
+    background: linear-gradient(90deg, #c92a2a 0%, #ff6b6b 100%);
+}
+
+/* Tumor Summary */
+.tumor-summary {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.tumor-summary h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.tumor-summary p {
+    margin: 8px 0;
+    color: #555;
+}
+
+.tumor-summary strong {
+    color: #667eea;
+}
+
+/* Medical Disclaimer */
+.medical-disclaimer {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffe69c 100%);
+    border-left: 4px solid #ff9800;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.medical-disclaimer strong {
+    color: #ff6f00;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.medical-disclaimer p {
+    margin: 0;
+    color: #856404;
+    line-height: 1.6;
+    font-size: 0.95em;
+}
+
+/* Error */
+.error {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fee;
+    border-left: 4px solid #f44;
+    border-radius: 5px;
+    color: #c33;
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+    opacity: 0.9;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer .small {
+    font-size: 0.85em;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .outcome-icon {
+        font-size: 3em;
+    }
+
+    .outcome-text {
+        font-size: 1.5em;
+    }
+}
