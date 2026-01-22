@@ -43,6 +43,48 @@ A machine learning web application that predicts whether a breast tumor is benig
    - StandardScaler applied to all features
    - Mean normalized to ~0
    - Standard deviation normalized to ~1
+### Training Scripts
+
+The project includes standalone Python scripts that demonstrate the complete ML workflow:
+
+#### `model/model_training.py`
+Complete end-to-end training pipeline showing:
+- Data loading and exploration
+- Preprocessing pipeline
+- Feature selection rationale
+- Model training with SVM
+- Cross-validation
+- Comprehensive evaluation
+- Model persistence
+
+**Run it:**
+```bash
+cd model
+python model_training.py
+```
+
+#### `model/data_preprocessing.py`
+Detailed preprocessing implementation demonstrating:
+- Missing value handling with pandas
+- LabelEncoder usage
+- Feature selection techniques
+- StandardScaler application
+- Correlation analysis
+- Various pandas operations (fillna, dropna, groupby, apply)
+
+**Run it:**
+```bash
+cd model
+python data_preprocessing.py
+```
+
+#### `model/model_building.ipynb`
+Interactive Jupyter notebook with:
+- Step-by-step analysis
+- Visualizations (if added)
+- Experimentation and iteration
+
+All three files demonstrate the same workflow but in different formats to show understanding of ML implementation.
 
 ### Model Training
 
